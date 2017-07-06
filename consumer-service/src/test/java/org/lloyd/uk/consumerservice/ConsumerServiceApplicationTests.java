@@ -37,12 +37,12 @@ public class ConsumerServiceApplicationTests {
 	public void restApiIsAvailable() throws Exception {
 		ResponseEntity<JSONObject> entity = this.restTemplate.getForEntity("http://localhost:" + port + "/json/", JSONObject.class);
 	    assertEquals(HttpStatus.OK, entity.getStatusCode());
-	  }
+	}
 
-	  @Test
-	  public void restApiProcessDefinitions() throws Exception {
-	    ResponseEntity<JSONObject> entity = this.restTemplate.getForEntity("http://localhost:" + port + "/json/path?param1=http://gturnquist-quoters.cfapps.io/api/random",
+	@Test
+	public void restApiProcessDefinitions() throws Exception {
+		ResponseEntity<JSONObject> entity = this.restTemplate.getForEntity("http://localhost:" + port + "/json/path?param1=http://gturnquist-quoters.cfapps.io/api/random",
 	    		JSONObject.class);
-	    assertEquals(HttpStatus.OK, entity.getStatusCode());
-	  }
+		assertEquals(HttpStatus.OK, entity.getStatusCode());
+	}
 }

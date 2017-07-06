@@ -5,6 +5,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.lloyd.uk.consumerservice.ConsumerServiceApplication;
+import org.lloyd.uk.consumerservice.model.RandomJson;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,5 +66,11 @@ public class ConsumerServiceApplicationWebIntegrationTests extends TestCase {
 		ResponseEntity<String> entity = this.restTemplate.getForEntity("/", String.class);
 		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
 		assertThat(entity.getBody()).isEqualTo("Hello World");
+	}
+	
+	@Test
+	public void testRandomJson() {
+		ResponseEntity<RandomJson> entity = this.restTemplate.getForEntity("/json/random", RandomJson.class);
+		assertThat(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
 	}
 }

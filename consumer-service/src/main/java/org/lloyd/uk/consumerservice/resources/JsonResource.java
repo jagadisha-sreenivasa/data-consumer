@@ -4,6 +4,7 @@
 package org.lloyd.uk.consumerservice.resources;
 
 import org.json.simple.JSONObject;
+import org.lloyd.uk.consumerservice.model.RandomJson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -45,5 +46,14 @@ public class JsonResource {
 		
         log.info(jsonObject.toString());
         return new ResponseEntity<JSONObject>(jsonObject, HttpStatus.OK);
+	}
+	
+	@ApiOperation(value = "Retirve Random JSON from http://gturnquist-quoters.cfapps.io/api/random",response = JSONObject.class)
+	@RequestMapping(value = "/random", produces = MediaType.APPLICATION_JSON_VALUE,  method = RequestMethod.GET)
+	public ResponseEntity<RandomJson> randomJSON() {
+		RestTemplate restTemplate = new RestTemplate();
+		RandomJson randomJson = restTemplate.getForObject("http://gturnquist-quoters.cfapps.io/api/random", RandomJson.class);
+        log.info(randomJson.toString());
+        return new ResponseEntity<RandomJson>(randomJson, HttpStatus.OK);
 	}
 }

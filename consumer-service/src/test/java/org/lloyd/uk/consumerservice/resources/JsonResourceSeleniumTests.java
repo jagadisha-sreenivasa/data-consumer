@@ -59,13 +59,6 @@ public class JsonResourceSeleniumTests extends TestCase {
 	public void testGetJSON() {
 		
 		this.webDriver.get("/json/");
-//		WebElement webElement = this.webDriver.findElement(By.tagName("type"));
-		
-		/*WebElement webElement = this.webDriver.findElement(By.tagName("type"));
-
-		String type = webElement.getText();
-		
-		assertThat(type).isEqualTo("success");*/
 	}
 
 	/**
@@ -77,4 +70,14 @@ public class JsonResourceSeleniumTests extends TestCase {
 		this.webDriver.get("/json/path?param1=http://gturnquist-quoters.cfapps.io/api/random");
 		assertTrue(true);
 	}
+	
+	/**
+	 * Run the ResponseEntity<RandomJson> randomJSON() method test
+	 */
+	@Test
+	public void testGetRandomJsonN() {
+		
+		this.webDriver.get("/json/random");
+	}
+	
 }

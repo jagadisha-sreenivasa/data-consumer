@@ -94,4 +94,14 @@ public class JsonResourceTest extends TestCase {
 	public void getVehicleWhenUserNotFoundShouldReturnNotFound_1() throws Exception {
 		this.mvc.perform(get("/json/paths/?param1=http://gturnquist-quoters.cfapps.io/api/random")).andExpect(status().isNotFound());
 	}
+	
+	/**
+	 * Run the ResponseEntity<RandomJson> randomJSON() method test
+	 * @throws Exception 
+	 */
+	@Test
+	public void testRandomJson() throws Exception {
+		this.mvc.perform(get("/json/random").accept(MediaType.APPLICATION_JSON))
+					.andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8));
+	}
 }
