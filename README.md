@@ -3,11 +3,11 @@ Data Consumer Service - Rest API
 Service to consume JSON/HTML 
 
 API Requirements :
-·  Create a Spring boot application which would have e2e API. 
-·  The API needs to fetch data from Apache (with dispatcher module configured).  
-·  Write a Unit test to validate the code
-·  Write a selenium based automation test
-·  Additionally , try for API specifications are in swagger and consider versioning in context path.
+1. Create a Spring boot application which would have e2e API.
+2. The API needs to fetch data from Apache (with dispatcher module configured).
+3. Write a Unit test to validate the code.
+4. Write a selenium based automation test.
+5. Additionally , try for API specifications are in swagger and consider versioning in context path.
 
 Technology Stack :
 1. Java/J2EE
