@@ -27,3 +27,8 @@ mvn clean package
 java -jar target/consumer-service-0.0.1-SNAPSHOT.jar
 
 Open http://localhost:8080 in a browser
+
+Deployment guide : 
+1. On AWS-EBS : 
+  Deploying a Spring Boot Application on AWS Using AWS Elastic Beanstalk
+  https://aws.amazon.com/blogs/devops/deploying-a-spring-boot-application-on-aws-using-aws-elastic-beanstalk/
