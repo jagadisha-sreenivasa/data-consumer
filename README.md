@@ -19,6 +19,7 @@ Technology Stack :
 7. Swagger - API Specifications
 8. Sonar/Jacoco - Test Coverage
 9. OAuth2 for security
+10. CORS Feature
 
 Building and executing the application from command line
 
